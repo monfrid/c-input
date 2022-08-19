@@ -1,9 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define max(A, B) ((A) > (B) ? (A) : (B))
-
-
 struct node_s {
     int value;
     struct node_s* next;
