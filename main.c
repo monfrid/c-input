@@ -6,10 +6,10 @@ struct node_s {
     struct node_s* next;
 };
 
-typedef struct node_s node;
+typedef struct node_s node_t;
 
-void printlist(node *head) {
-    node *temp = head; 
+void printlist(node_t *head) {
+    node_t *temp = head; 
 
     while(temp != NULL) {
         printf("%d - ", temp->value);
@@ -18,8 +18,8 @@ void printlist(node *head) {
     printf("\n");
 }
 
-node *list(int value) {
-    node *result = malloc(sizeof(node));
+node_t *node(int value) {
+    node_t *result = malloc(sizeof(node_t));
     result->value = value;
     result->next = NULL;
     return result;
@@ -27,11 +27,11 @@ node *list(int value) {
 
 int main()
 {
-    node *tmp;
-    node *head = NULL;
+    node_t *tmp;
+    node_t *head = NULL;
 
     for (int i = 0; i < 25; i++) {
-        tmp = list(i);
+        tmp = node(i);
         tmp->next = head;
         head = tmp;
     }
